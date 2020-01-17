@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>W3 Browser</title>
+    <link rel="icon" href="./images/logo.ico">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./swiper-3.4.2.min.css">
+</head>
+
+<body>
+    <div class="fixed-w center">
+        <img src="./images/2.png" alt="">
+    </div>
+    <div class="arrow center">
+        <img src="./images/arrow.png" alt="">
+    </div>
+    <div class="nav-container">
+        <div class="nav-sign-container">
+            0
+            <div class="v hc vc" style="height: 27px;">
+                <div class="nav-sign">1</div>
+                <div class="nav-sign">2</div>
+                <div class="nav-sign">3</div>
+                <div class="nav-sign">4</div>
+                <div class="nav-sign">5</div>
+                <div class="nav-sign">6</div>
+            </div>
+        </div>
+        <div class="nav-text-container">
+            <div class="nav-top"></div>
+            <div class="nav-bottom"></div>
+            <div class="nav-text">认识W3</div>
+            <div class="nav-text">拒绝传统</div>
+            <div class="nav-text">顶级入口</div>
+            <div class="nav-text">扩展储存</div>
+            <div class="nav-text">搜索功能</div>
+            <div class="nav-text">链接未来</div>
+
+        </div>
+    </div>
+    <div class="phone-box">
+        <img src="./images/phone.png" alt="">
+        <div class="slide-pics">
+            <div class="slide-pic">
+                <img src="./images/p1.png" alt="">
+            </div>
+            <div class="slide-pic">
+                <img src="./images/p2.png" alt="">
+            </div>
+            <div class="slide-pic">
+                <img src="./images/p3.png" alt="">
+            </div>
+            <div class="slide-pic">
+                <img src="./images/p4.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="swiper-container" id="main">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide center flex v re">
+                <div class="s1-text">
+                    新旧秩序的媒介 新旧世界的连接
+                </div>
+                <div class="s1-logo-wrap flex1 flex vc hc">
+                    <div class="s1-logo">
+                        <img src="./images/logo.png" alt="">
+                    </div>
+                </div>
+                <div class="copy center">
+                    &copy; 成都零识科技有限公司 版权所有
+                </div>
+
+            </div>
+            <div class="swiper-slide re">
+                <div class="mphone">
+                    <img src="./images/pp1.png" alt="">
+                </div>
+                <div class="wdesc">
+                    <div class="wd1">全功能WEB浏览器</div>
+                    <p>
+                        拒绝传统
+                        <br>
+                        无缝衔接各种应用
+                    </p>
+                </div>
+
+                <div class="copy center">
+                    &copy; 成都零识科技有限公司 版权所有
+                </div>
+
+            </div>
+            <div class="swiper-slide re">
+                <div class="mphone">
+                    <img src="./images/pp2.png" alt="">
+                </div>
+                <div class="wdesc">
+                    <div class="wd1">DAPP顶级入口</div>
+                    <p>
+                        定制化DAPP呈现界面
+                        <br>
+                        适用于用户的交互流程
+
+                    </p>
+                </div>
+                <div class="copy center">
+                    &copy; 成都零识科技有限公司 版权所有
+                </div>
+
+            </div>
+            <div class="swiper-slide re">
+                <div class="mphone">
+                    <img src="./images/pp3.png" alt="">
+                </div>
+                <div class="wdesc">
+                    <div class="wd1">DID扩展存储与授权</div>
+                    <p>
+                        数字身份轻松授权
+                        <br>
+                        数据加密存储本地
+
+                    </p>
+                </div>
+                <div class="copy center">
+                    &copy; 成都零识科技有限公司 版权所有
+                </div>
+
+            </div>
+            <div class="swiper-slide re">
+                <div class="mphone">
+                    <img src="./images/pp4.png" alt="">
+                </div>
+                <div class="wdesc">
+                    <div class="wd1">定制化搜索</div>
+                    <p>
+                        输入W3
+                        <br>
+                        快速定位搜索内容
+
+                    </p>
+                </div>
+                <div class="copy center">
+                    &copy; 成都零识科技有限公司 版权所有
+                </div>
+
+            </div>
+            <div class="swiper-slide center flex v re">
+                <div class="swrap flex1 flex hc vc v">
+                    <div class="wdescc">
+                        <div class="wd1">工具型的去中心化流量引擎</div>
+                        <p>
+
+                            连接新旧世界的桥梁
+                            未来有无限拓展可能
+                        </p>
+                    </div>
+                    <div class="cs-btn">
+                        Coming Soon
+                    </div>
+                </div>
+                <div class="copy center">
+                    &copy; 成都零识科技有限公司 版权所有
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+    <script src="./jquery-3.2.1.min.js"></script>
+    <script src="./swiper-3.4.2.min.js"></script>
+    <script>
+        $(function () {
+            let $phone = $('.phone-box');
+            let $pic = $phone.find('.slide-pic');
+            let $sign = $('.nav-sign');
+            let $signText = $('.nav-text');
+            let $arrow = $('.arrow');
+            var swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination',
+                paginationClickable: true,
+                keyboard: true,
+                mousewheel: true,
+                direction: 'vertical',
+                parallax: true,
+                speed: 600,
+                // initialSlide: 1,
+                keyboardControl: true,
+                mousewheelControl: true,
+                onInit: function (sw) {
+                    if (sw.activeIndex == 0) {
+                        $phone.hide();
+                    }
+                },
+                // onSlideChangeStart: function(sw) {
+                //     console.log(sw)
+                // },
+                onSlideChangeStart: function (sw) {
+                    $sign.css({
+                        transform: `translateY(-${100 * sw.activeIndex}%)`
+                    });
+                    $signText.css({
+                        transform: `translateX(-${100 * sw.activeIndex}%)`
+                    });
+                    if (sw.activeIndex > 0 && sw.activeIndex < sw.bullets.length - 1) {
+                        $phone.show();
+                        $pic.css({
+                            transform: `translateY(-${100 * (sw.activeIndex-1)}%)`
+                        });
+                        // $pic.hide();
+                        // $pic.eq(sw.activeIndex - 1).show();
+                    }
+                    else {
+                        $phone.hide();
+                    }
+
+
+                    if (sw.activeIndex == sw.bullets.length - 1) {
+                        $arrow.hide();
+                    }
+                    else {
+                        window.innerWidth < 800 && $arrow.show();
+                    }
+                    // bullets
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,401 @@
+.game-wrap {
+  position: relative;
+  min-height: 100%;
+  height: 100%;
+  background-color: #14181b;
+  padding: 1rem 0;
+  box-sizing: border-box;
+
+  .progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    /* border-radius: 0 0 8px 8px; */
+  }
+  .progress-indicator {
+    transition: width 0.3s linear;
+    height: 100%;
+  }
+
+  .el-table {
+    .win {
+      color: #70a700;
+    }
+    .loss {
+      color: #ea0070;
+    }
+    .flat {
+      color: #f4bb03;
+    }
+    .table-cell-avtar {
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      vertical-align: middle;
+    }
+  }
+
+  .el-table td,
+  .el-table th {
+    padding: 3px 0;
+  }
+  .el-table th,
+  .el-table tr,
+  .el-table {
+    background-color: transparent;
+  }
+  .el-table td,
+  .el-table th.is-leaf {
+    border-bottom: none;
+  }
+  .el-table::before {
+    height: 0;
+  }
+  .el-tabs__header {
+    background-color: #30383f;
+  }
+  .el-tabs__item {
+    color: #fff;
+    width: 50%;
+    text-align: center;
+  }
+  .el-tabs__item:hover {
+    color: #f5bc03;
+  }
+  .el-tabs__nav-wrap::after {
+    height: 0;
+  }
+  .el-tabs__active-bar {
+    background-color: #f5bc03;
+  }
+  .el-tabs__item.is-active {
+    color: #f5bc03;
+  }
+  .el-tabs__nav {
+    width: 100%;
+  }
+  .el-tab-pane {
+    padding: 0 1rem;
+  }
+  .game-left {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+  .game-right {
+    flex: 1.3;
+    max-width: 345px;
+    flex-direction: column;
+    margin-left: 1rem;
+    background-color: #20272c;
+    border-radius: 4px 0 0 4px;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    .el-input__inner {
+      background-color: transparent;
+      border: 1px solid #808080;
+      color: #fff;
+    }
+    .el-input__inner:active {
+      border-color: #f5bc03;
+    }
+    .el-input__inner:active + .el-input-group__append {
+      border-color: #f5bc03;
+    }
+    .el-input-group__append {
+      background-color: transparent;
+      width: auto !important;
+      padding: 0 10px;
+      color: #fff;
+      border-color: #808080;
+      transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    .bet-input {
+      .el-input__inner {
+        border-right-width: 0;
+      }
+    }
+    .slider-input {
+      .el-slider__bar {
+        background-color: #f5bc03;
+      }
+      .el-slider__button {
+        width: 9px;
+        height: 9px;
+        border: 5px solid #fff;
+        background-color: #f5bc03;
+      }
+    }
+    .rate-input {
+      .rate-add,
+      .rate-delete {
+        cursor: pointer;
+        font-size: 20px;
+        color: #8f9395;
+      }
+      .rate-add:hover,
+      .rate-delete:hover {
+        color: #fff;
+      }
+      .el-input__inner {
+        border-right-width: 0;
+      }
+    }
+    .join-btn {
+      width: 100%;
+      margin: 2.6rem 0;
+    }
+    .ycolor {
+      color: #f5bc03;
+      vertical-align: middle;
+    }
+    .autorate {
+      width: 100px;
+      text-align: center;
+      display: inline-block;
+    }
+    .rest {
+      text-align: right;
+      font-size: 12px;
+    }
+    .fresh {
+      display: inline-block;
+      padding: 10px;
+      background: url(../../assets/images/fresh.png) no-repeat center;
+      background-size: contain;
+      cursor: pointer;
+      vertical-align: middle;
+    }
+    .fresh-active {
+      animation: rot 0.6s linear 1;
+    }
+    .auto-cube {
+      justify-content: center;
+      li {
+        border: 1px solid #fff;
+        border-radius: 4px;
+        text-align: center;
+        flex: 1;
+        margin: 0 5px;
+        line-height: 1.8rem;
+        cursor: pointer;
+      }
+      li:first-child {
+        margin-left: 0;
+      }
+      li.active {
+        border-color: #f5bc03;
+        color: #f5bc03;
+      }
+    }
+  }
+  .game-right.borderRadius {
+    border-radius: 4px;
+  }
+  .game-result {
+    display: flex;
+    flex-direction: column;
+    .current-table {
+      flex: 1;
+    }
+    .el-table {
+      height: 100%;
+      margin-bottom: 10px;
+      .cell {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 100%;
+      }
+    }
+    .result-hd {
+      background-color: #30383f;
+      line-height: 3rem;
+    }
+  }
+  .game-mobile {
+    height: 360px;
+    position: relative;
+    .cell {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: 100%;
+    }
+  }
+  .game-chart {
+    canvas {
+      border-top-right-radius: 4px;
+    }
+    min-height: 200px;
+    box-sizing: border-box;
+    position: relative;
+    flex: 1;
+    .chart-bg {
+      position: absolute;
+      bottom: 20px;
+      right: 0;
+      z-index: 12;
+      width: calc(100% - 30px);
+      height: 85%;
+      border-radius: 4px;
+    }
+  }
+  .game-control {
+    .auto-hd {
+      margin-bottom: 2rem;
+    }
+    .auto-fter {
+      margin-top: 2rem;
+    }
+    .el-button {
+      border: none;
+    }
+    .autoopen {
+      background-color: #f5bc03;
+      color: #11152e;
+    }
+    .autoclose {
+      background-color: #701747;
+      color: #fff;
+    }
+    .autoopen:hover {
+      background-color: #e4a600;
+    }
+    .autoclose:hover {
+      background-color: #991054;
+    }
+  }
+  .game-record {
+    // flex: 1;
+    overflow-x: hidden;
+    .cell {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: 100%;
+    }
+    height: 275px;
+    > p {
+      color: #fff;
+      margin-top: 0;
+    }
+    color: #b3b3b3;
+    background-color: #20272c;
+    border-radius: 4px;
+    margin: 1rem 0 0 30px;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+}
+
+.game-chart {
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .game-wrap {
+    flex-direction: column;
+    padding-bottom: 0;
+    .game-left,
+    .game-right {
+      flex: none;
+      max-width: none;
+    }
+    .game-chart {
+      height: 210px;
+      margin-right: 16px;
+      overflow: hidden;
+    }
+    .game-right {
+      margin-left: 0;
+      .rate-add:hover,
+      .rate-delete:hover {
+        color: #f5bc03;
+      }
+      .el-tab-pane {
+        padding: 0 3rem;
+      }
+      .man-handle {
+        display: flex;
+        flex-direction: column;
+        .bet-input {
+          order: 2;
+        }
+        .slider-input {
+          order: 3;
+        }
+        .rate-input {
+          order: 1;
+          .el-input__inner {
+            border-right-width: 1px;
+          }
+          .el-input-group__append {
+            text-align: center;
+          }
+          .rate-delete {
+            border-left: 1px solid #fff;
+            padding-left: 10px;
+            margin-left: 10px;
+          }
+        }
+        .join-btn {
+          order: 4;
+        }
+      }
+      .join-btn {
+        margin: 1.5rem 0;
+      }
+    }
+    .game-control {
+      .el-tabs__header {
+        margin-bottom: 0
+      }
+      .input-wrap {
+        label {
+          font-size: 12px;
+        }
+        .el-input__inner {
+          height: 35px;
+          line-height: 35px;
+        }
+      }
+    }
+    .game-mobile {
+      .el-tab-pane {
+        padding-bottom: 6px;
+        // height: 300px;
+      }
+      .progress {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom:0;
+        z-index: 99;
+        height: 6px;
+      }
+    }
+    .slider-input {
+      padding-top:0;
+    }
+  }
+}
+
+@keyframes rot {
+  0% {
+    transform: rotateZ(0);
+  }
+  50% {
+    transform: rotateZ(-180deg);
+  }
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}

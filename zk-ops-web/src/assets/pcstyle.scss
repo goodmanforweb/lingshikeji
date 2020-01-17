@@ -1,0 +1,29 @@
+.pc {
+    .main {
+        padding: 16px 48px 16px;
+    }
+    .head {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .aside {
+        color:#AFBBC2;
+        z-index: 99;
+        width: 63px;
+        background: #086599;
+        transition: width .3s linear;
+        will-change: width;
+        position: relative;
+        overflow: hidden;
+    }
+    .panel-width {
+        width: 300px;
+    }
+    .kj-aside {
+        margin-left: 20px
+    }
+        
+}

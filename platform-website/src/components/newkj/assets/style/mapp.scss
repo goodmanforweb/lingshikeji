@@ -1,0 +1,259 @@
+@media screen and (max-width: 700px) {
+    .body {
+        .kjposter {
+            button.kjbtn {
+                font-size: 16px;
+                height: .96rem;
+                line-height: 1.4;
+                padding: 0 .8rem 0.15rem;
+              }
+        }
+        button.kjbtn {
+            padding: 0 .6rem 0.08rem;
+            height: .64rem;
+        }
+        button.ks-btn {
+            width: auto;
+        }
+        .pw-btns {
+            button.kjbtn {
+                padding: 0 .2rem 0.08rem;
+                height: .44rem;
+            }
+        }
+        .el-table {
+            white-space: nowrap;
+        }
+        .dbox-cont {
+            .el-carousel__container {
+                min-height: 378px!important;
+            }
+        }
+        
+    }
+    // .f12 {
+    //     font-size: 12px;
+    //   }
+    //   .f14 {
+    //     font-size: 14px;
+    //   }
+    //   .f18 {
+    //     font-size: 18px;
+    //   }
+    //   .f20 {
+    //     font-size: 20px;
+    //   }
+    //   .f22 {
+    //     font-size: 22px;
+    //   }
+    //   .f23 {
+    //     font-size: 23px;
+    //   }
+    //   .f24 {
+    //     font-size: 24px;
+    //   }
+    //   .f30 {
+    //       font-size: 22px
+    //   }
+    .firewrap {
+        div.dbox {
+            width: 90%;
+        }
+        div.dbox-wrap {
+            // height: 70vh;
+        }
+        div.fire-box2{
+            >span {
+                width: 100px;
+                height: 100px;
+            }
+        }
+        div.fire-ani {
+            background-size: auto 400px;
+        }
+    }
+    .mobile {
+        .kj-power, .kj-exchange {
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+        .kj-menu {
+            .km-main-btn {
+                // background-position: -16px center;
+           }
+        }
+        
+        
+        div.kj-exchange,
+        div.kre-box,
+        div.mall
+        {
+            width: auto;
+        }
+        .kj-progress-bar {
+            width: 6rem;
+        }
+        .w1100 {
+            width: auto;
+        }
+        .item-show {
+            margin-bottom: 6px;
+        }
+        .kjgame {
+            .kj-menu {
+                margin-left: -.16rem;
+            }
+        }
+        .item-show-lists {
+            justify-content: space-between;
+        }
+        .kr-tt-stroke {
+            -webkit-text-stroke: 1px #725E95;
+          }
+          .kj-balls {
+              width: auto;
+             
+          
+          }
+          .kj-hx {
+              padding-top: 1rem;
+              .kj-xingqi {
+                  top:-.5rem;
+              }
+              .kj-rt {
+                  top:0;
+              }
+          }
+          .ke-input-wrap .ke-btn {
+              width: 1rem;
+              height: .74rem;
+          }
+          .ke-sellers, .ke-buyers {
+            width: 2.1rem;
+            }
+
+            .kj-hx {
+                .kj-hx-center {
+                    width: auto;
+                }
+            }
+          
+    }
+    div.dbox {
+        width: 80%;
+        max-width: none;
+    }
+    div.is-tit,
+    .kb-text
+     {
+        font-size: .24rem
+    }
+    div.kj-balls .kj-ball {
+        font-size: .22rem;
+    }
+    div.is-bd {
+        font-size: .2rem;
+    }
+    div.km-box-tt span {
+        font-size: .34rem
+    }
+    div.km-box-tt {
+        width: 3.2rem;
+        height: 0.89rem;
+        top: -.2rem;
+        line-height: 0.75rem;
+    }
+    .km-box {
+        div.km-box-tt {
+            line-height: 0.6rem;
+        }
+    }
+    .kj-balls .kj-ball.lqiu {
+        width: 1.33rem;
+        height: 1.33rem;
+    }
+    .kj-balls .kj-ball.bqiu {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    div.kj-m-tt {
+        
+        span {
+            display: block;
+            line-height: 26px;
+        }
+    }
+    
+    .mall {
+        .kj-m-tt {
+            width: 80%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+    div.kj-m-select {
+        .mall {
+            width: auto;
+        }
+        .km-box {
+            width: 4.2rem;
+            height: 7rem;
+            min-width: 4.2rem;
+       }
+        .km-box-spec {
+            width: 3.62rem;
+            height: 5.2rem;
+            .km-box-tt {
+                line-height: .8rem;
+                width: 2rem;
+                height: 1rem;
+                top:-.38rem;
+                span {
+                    font-size: .28rem
+                }
+           }
+       }
+        .kbb-item {
+            width:1.6rem;
+            height: 1.6rem;
+       }
+        .ks-paper {
+            width: 2.97rem;
+            height: 2.56rem;
+       }
+        
+        
+    }
+
+    div.kj-hx {
+        .kj-hx-zs {
+            width: 2.5rem;
+            height: 4rem;
+            margin-bottom: -0.7rem;
+        }
+        .kj-hx-zs-text {
+            height: .57rem;
+            .kzj-l {
+                width: .4rem;
+            }
+            .kzj-m {
+                margin-left: -1px;
+            }
+        }
+    }
+    .kzj-m {
+        line-height: 0.46rem;
+    }
+    .kj-jz {
+        padding: 10px;
+        .kj-m-tt {
+            width: 60%;
+            margin-left:auto;
+            margin-right:auto;
+            margin-bottom: 20px;
+        }
+        .kj-pw-jz {
+            flex-wrap: wrap
+        }
+    }
+}

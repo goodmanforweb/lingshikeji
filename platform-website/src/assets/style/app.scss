@@ -1,0 +1,217 @@
+// @font-face {
+//   font-family: "MFLingHei";
+//   src: url("../../components/newkj/assets/style/MFLingHei2.ttf") format("truetype");
+// }
+
+// @font-face {
+//   font-family: "din";
+//   src: url("../../components/redwallet/assets/style/din.ttf") format("truetype");
+// }
+.flex {
+  display: flex;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.flex2 {
+  flex: 2;
+}
+.sb {
+  justify-content: space-between;
+}
+.o1 {
+  order: 1;
+}
+
+.o2 {
+  order: 2;
+}
+.noscroll {
+  overflow: hidden;
+}
+.center {
+  text-align: center;
+}
+
+.phone-prefix-select {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  appearance: none;
+  border-radius: 0;
+}
+
+.el-input .el-input-group__append,
+.el-input-group__prepend {
+  width: 50px !important;
+}
+
+.el-input.is-disabled .el-input__inner,
+.el-input.is-disabled .el-input-group__append {
+  background-color: #4d5256 !important;
+  border-color: #808080 !important;
+  color: #fff !important;
+}
+
+body .el-loading-mask {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+.bd .el-radio__input.is-checked + .el-radio__label {
+  color: #2fbffb;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+
+.el-radio__inner {
+  border: 1px solid #2fbffb !important;
+  background: none !important;
+}
+
+.el-radio__inner::after {
+  background-color: #2fbffb !important;
+}
+.el-button {
+  border-color:transparent!important
+}
+// .slider-in-enter-active,
+// .slider-in-leave-active,
+// .slider-out-enter-active,
+// .slider-out-leave-active {
+//   will-change: transform;
+//   transition: all .5s;
+//   backface-visibility: hidden;
+//   perspective: 1000
+// }
+
+// .slider-out-enter {
+//   opacity: 0;
+//   transform: translate3d(-100%, 0, 0)
+// }
+
+// .slider-in-enter, .slider-out-leave-active {
+//   opacity: 0;
+//   transform: translate3d(100%, 0, 0)
+// }
+
+// .slider-in-leave-active {
+//   opacity: 0;
+//   transform: translate3d(-100%, 0, 0)
+// }
+
+.btn-spacing span {
+  letter-spacing: 20px !important;
+  margin-right: -20px !important;
+}
+
+.zh {
+  .game-coin {
+    .gm {
+      letter-spacing: 6px;
+    }
+    .el-button {
+      letter-spacing: 3px;
+    }
+    .gamecoin-text {
+      letter-spacing: 2px;
+    }
+  }
+  .index-wrap {
+    .switch-show {
+      h1 {
+        letter-spacing: 10px;
+      }
+      .cont {
+        letter-spacing: 2px;
+      }
+    }
+  }
+  .steps {
+    .cont {
+      letter-spacing: 2px;
+    }
+  }
+  .cwb-text {
+    >div {
+      letter-spacing: 2px
+    }
+  }
+  .ccw .cb-tt p {
+    letter-spacing: 2px
+  }
+}
+.cjoy {
+  img {
+    vertical-align: middle
+  }
+  img:first-child {
+    width: 2.25rem;
+  }
+  img:last-child {
+    width: 10rem;
+  }
+}
+.share_pic {
+  width:0;
+  height:0;
+  position: absolute;
+}
+.en {
+  font-family: "Helvetica Neue", Helvetica;
+}
+// @font-face {
+//   // font-family: "pingfang";
+//   // src: url("./pingfang.ttf") format("truetype");
+//   // src: url('./PingFang-Light.woff') format('woff');
+// }
+// .kjfont {
+//   font-family: 'pingfang'
+// }
+@media screen and (max-width: 700px) {
+  html {
+    font-size: 14px;
+  }
+  .el-message {
+    min-width: auto !important;
+    width: 80% !important;
+  }
+}
+
+@media screen and (min-width: 341px) and (max-width: 535px) {
+  .cjoy img:first-child {
+    width: 2rem; }
+  .cjoy img:last-child {
+    width: 5rem; }
+  #nav-box .funnyup .funny img {
+    width: 3rem; } }
+    @media screen and (max-width: 390px) {
+      #nav-box .cjoy img:first-child {
+        display: none; }
+      #nav-box .funnyup .funny {
+        padding-left: 1rem; }
+        #nav-box .funnyup .funny img {
+          display: none; } }
+          @media screen and (max-width: 340px) {
+            .cjoy img:first-child {
+              display: none; }
+            .cjoy img:last-child {
+              width: 6rem; }
+            img.kjlogo {
+              width: 18px !important; } }
+
+

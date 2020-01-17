@@ -1,0 +1,619 @@
+
+<html>
+<head>
+    <style>
+            @font-face {
+                    font-family: "MFLingHei";
+                    /* src: url("./MFLingHei.ttf") format("truetype"); */
+                    src: url("./wukong.ttf") format("truetype");
+                }
+                body {
+                    font-family: "MFLingHei";
+                }
+        </style>
+</head>
+<body>
+    abcdefghijklmnoprstuvwxyz   ABCDEFGHIJKLMNOPQRSTUWVXYZs
+   1,2,3,4,5,6,7,8,9,0 .
+   const showNavConfig = [['detail', '兑换详情', 1], ['gl','攻略说明', 1], ['award','获奖记录', 1], ['lj', '礼金商城', 0]];
+   <template>
+        <div class="dash-wrap">
+            <div class="dash">
+                <div class="d-tt">
+                    <img src="../../assets/images/rbk.png" alt="">
+                    <div class="d-tt-info flex vc hc v">
+                        <span>已摇到金币</span>
+                        <div class="din">{{userinfo.received | currency}} HB</div>
+                        <!-- <router-link to="/lj" >至礼金商城兑奖 > </router-link> -->
+                    </div>
+                </div>
+                <div class="d-card flex h-hcolor sb">
+                    <div class="d-yfc  icon-btn flex vc">
+                        <span class="icon-pic coin"></span>
+                        <div class="center">
+                            <span>已发出金币</span>
+                            <div class="din">{{userinfo.send}} CJT</div>
+                        </div>
+                    </div>
+                    <div class="d-line"></div>
+                    <div class="d-yyq flex icon-btn vc">
+                        <div class="center">
+                            <span>已邀请好友</span>
+                            <div class="din">{{userinfo.invited_cnt}}</div>
+                        </div>
+                        <span class="icon-pic share"></span>
+                    </div>
+                </div>
+                <div class="d-record">
+                    <div class="d-r-tab h-hcolor flex">
+                        <router-link to="/dash/yd">
+                            摇到记录
+                        </router-link>
+                        <router-link to="/dash/fc">
+                            发出记录
+                        </router-link>
+                        <router-link to="/dash/yq">
+                            邀请记录
+                        </router-link>
+                    </div>
+                    <router-view class="d-record-cont"></router-view>
+                </div>
+            </div>
+        </div>
+    </template>
+    暂时没有记录
+    'MM月DD日'
+    等待开奖
+    <div class="detail">
+            <div class="d-card flex">
+                <div class="d-card-info">
+                    <h4>CJ_20</h4>
+                    <div>预计收益：400,000.00 SUC</div>
+                    <div>挖矿时长：275天</div>
+                    <div>剩余库存：100</div>
+                </div>
+                <div class="d-card-pic''">
+                    <img src="" alt="">
+                </div>
+            </div>
+            <div class="h-btn">
+                <i class="d-icon"></i>
+                <i>1000CJT + 200SUC</i>
+            </div>
+            <div class="h-btn-hint center">
+                <span>SUC余额：19,098.00</span>
+                <div>CJT红包余额：19,098.00</div>
+            </div>
+            <div class="v-b-tt ">
+                <span>权益等级差异</span>
+            </div>
+            <ul class="v-level-cont">
+                <li class="flex">
+                    <span>VIP3</span>
+                    <span class="v-l-icon vip3"></span>
+                    <span>800CJT + 200SUC</span>
+                </li>
+                <li class="flex">
+                    <span>VIP2</span>
+                    <span class="v-l-icon vip2"></span>
+                    <span>1000CJT + 200SUC</span>
+                </li>
+                <li class="flex active">
+                    <span>VIP1</span>
+                    <span class="v-l-icon vip1"></span>
+                    <span>1000CJT + 200SUC</span>
+                </li>
+                <li class="flex">
+                    <span>VIP0</span>
+                    <span class="v-l-icon vip0"></span>
+                    <span>不符合该项兑换活动</span>
+                </li>
+            </ul>
+    
+            <Exkj :show.sync = 'dialogshow' :data="data" @cancel="cancel" @confirm="confirm"></Exkj>
+        </div>
+        <div class="vip" >
+                <div class="v-tt">
+                    <img src="../../assets/images/viptt.jpg" alt="">
+                    <div class="v-tt-cont flex vc hc v">
+                        <div class="v-cont-icon vip0 flex vc"  :style="`backgroundImage:url(${vip.icon})`" @click='dialogshow2=true'>
+                            <span >升级至VIP{{vip.sort}}</span>
+                        </div>
+                        <div>当前等级: {{vip.name}}</div>
+                        <span>经验值： {{vip.exp}}</span>
+                    </div>
+                </div>
+                <div class="v-cont ">
+                    <div class="v-block">
+                        <div class="v-b-tt flex sb">
+                            <span>我的会员</span>
+                            <!-- <span><i>等级说明</i><i class="v-b-icon"></i></span> -->
+                        </div>
+                        <div class="v-b-cont v-b-cont-icons">
+                            <ul class="v-b-icons flex sb" >
+                                <li v-for="(level, index) in viplevel" :key="index">
+                                    <span class="v-l-icon"><img :src="level.icon" alt=""></span>
+                                    <div>
+                                        {{level.name}}
+                                    </div>
+                                    <span>{{level.exp}}</span>
+                                </li>
+                            </ul>
+                            <div class="v-b-bars" ref="bar"><span :style="{width: bar}" >
+                                    <i>{{vip.exp}}</i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="v-block">
+                        <div class="v-b-tt flex sb">
+                            <span>VIP会员说明</span>
+                            <!-- <span><i>兑换记录</i><i class="v-b-icon"></i></span> -->
+                        </div>
+                        <div class="v-b-cont">
+                           
+                            <h4>会员体系概述</h4>
+                            <p>JOY摇摇乐会员体系包含4个等级：VIP0、VIP1、VIP2、VIP3</p>
+                            <p>等级由“经验值“所决定，经验值越高，等级越高，等级越高可享受的会员权益也就更丰富。其中VIP0为普通会员，无法享受礼金商城中的会员礼遇，该等级会员可以累积经验值至VIP1以上的等级享受更多会员福利。</p>
+        
+                            <h4>如何升级</h4>
+                            <p>
+                                VIP经验值由
+                                <router-link to="" class="v-hcolor">
+                                    参与摇奖的
+                                </router-link>
+                                方式获得，系统会根据经验值计算VIP等级。只要经验值达到升级的门槛，联系CJ小助手即可开通/升级VIP。
+                            </p>
+                            <p>经验值具体分值说明</p>
+                            <div class="v-b-cont-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>行为</th>
+                                            <th>分值</th>
+                                            <th>说明</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                参与摇一摇
+                                            </td>
+                                             <td>
+                                                +1
+                                            </td>
+                                             <td>
+                                               成功摇取摇钱树，无论是否中奖均视为获得一次经验值
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <h4>VIP权益</h4>
+                            <p>
+                                VIP1以上的用户可以享受礼金商城中的用户权益。 
+                            </p>
+                            <p>
+                                商城即将推出矿机限时礼遇，用户可以通过HB（红包礼金）+CJT的形式购买矿机，VIP的等级越高，所享受的折扣越高。
+                                用户可以通过获得的奖金兑换矿机获得二次收益。兑换后的矿机可至平台“超级算力”处查看。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                 <Ercode :show.sync = 'dialogshow2' ></Ercode>
+            </div>
+            <h4 >升级VIP权益 </h4>
+            <p>扫描二维码进群，联系CJ小助手即可开通权益,VIP升级时间为春节期间，具体时间请关注相关公告。</p>
+            <div class="exkj center">
+                    <h4 >兑换确认 </h4>
+                    <p>
+                        是否以 {{data.price}} 兑换 {{data.machine}}？
+                        兑换后可至“超级算力”查看矿机。
+                    </p>
+                    <el-button @click="confirm" :loading="loader">
+                        确认
+                    </el-button>
+                    <div class="tosee center">
+                            <h4 >敬请期待 </h4>
+                            <p>
+                                礼金商城正在给您准备新春贺礼，等待是为了更好的礼遇，Cryptojoy祝您诸事顺利！
+                            </p>
+                            <template>
+                                    <Layer @close="$emit('update:show');$emit('cancel')" v-if="show">
+                                        <div class="useup">
+                                            <h4 class="center">今日机会已用尽 </h4>
+                                            <p class="center">
+                                                请明日继续到吉祥树摇金币。
+                                <br>
+                                <br>
+                                以下是快速获取机会的小秘籍，点击屏幕左上角：
+                                
+                                            </p>
+                                            <div class="icon-btn flex vc">
+                                                <span class=" icon-pic coin"></span>
+                                                <i class="flex1">
+                                                    分享游戏海报给好友，好友成功注册Cryptojoy后，每参与3次摇一摇您即可获得一次机会
+                                                </i>
+                                            </div>
+                                            <div class="icon-btn flex vc">
+                                                <span class=" icon-pic share"></span>
+                                                <i class="flex1">
+                                                    塞金币到吉祥树，将祝福传递给Cryptojoy社区，每发送100CJT即可获得1次机会
+                                                </i>
+                                            </div>
+                                            <div class="icon-btn flex vc">
+                                                <span class=" icon-pic rule"></span>
+                                                <i class="flex1">
+                                                    查看游戏攻略获取更多详细玩法
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </Layer>
+                                </template>
+                                新春摇一摇，诸事喜运到  
+                                
+                                
+                                <template>
+                                        <div class="gl">
+                                            <h3>关于Joy摇摇乐</h3>
+                                            <p>
+                                                Joy摇摇乐是CryptoJOY在春节期间推出的限定游戏。JOY吉祥树上结了许多的金币红包，玩家可以摇一摇吉祥树收获金币红包（HB）奖励
+                                    
+                                     <br>
+                                      <br>
+                                     游戏简单易玩，是一款可以通过金币红包二次兑换矿机赢取挖矿奖励的游戏。这也是CryptoJOY对广大的社区玩家献上最诚挚的献礼。
+                                    </p>
+                                            <h3>玩法说明</h3>
+                                            <p>
+                                                在游戏限定期内，玩家每轮可以获得1次摇一摇机会。奖池金额会随着玩家/平台的不断贡献而增长。玩家摇到红包奖励的金额将随机产生。当机会消耗完毕后，玩家可以选择等待下一轮再进行游戏，或者可以选择为自己增加额外的摇一摇机会。
+                                           
+                                           
+                                           <h3>
+                                               奖池说明
+                                           </h3>
+                                           <p>
+                                               玩家每次摇一摇后，都将收到CryptoJOY社区的祝福签，摇到的红包金额将在奖池开奖后公布。
+                                               <br>
+                                               <br>
+                                               所有的红包均参与奖池50%的分红，奖金的大小又区块链上产生的幸运随机数所决定，奖池剩下的35%进入下一期累计奖池。
+                                           </p>
+                                    
+                                           <h3>
+                                               大奖设置
+                                           </h3>
+                                           <p>
+                                               每一轮游戏结束前，最后一位参与的玩家，将获得当前奖池10%的超级大奖。
+                                    
+                                           </p>
+                                           <h3>
+                                               幸运奖设置
+                                           </h3>
+                                           <p>
+                                               每一轮游戏将产生一个幸运数字，摇到幸运数字的玩家将获当前奖池5%的幸运奖，
+                                    其余用户，越接近幸运数字，所获得的奖励就越大。
+                                           </p>
+                                           <h3>
+                                               关于HB
+                                           </h3>
+                                           <p>
+                                               玩家可通过累计HB，在后续开放的礼金商城中兑换更多的礼品， 如使用HB兑换矿机、领取实物奖励等，更多的权益陆续上线中，敬请期待！
+                                           </p>
+                                           <h3>
+                                               摇摇乐vip
+                                           </h3>
+                                           <p>
+                                               摇摇乐设置了5个Vip等级，玩家达到相应等级的经验值即可联系CJ小助手开通相应的Vip权益。经验值可通过积累摇一摇次数获得，每参与摇奖一次即可获得1点经验值。Vip等级越高可在礼金商城享受更优惠的矿机兑换政策，具体详情可见礼金商城。
+                                           </p>
+                                           <h3>
+                                               获得额外机会
+                                           </h3>
+                                           <p>
+                                               一、至页面的左上角选择“分享”，将游戏海报分享给好友，当1位好友通过海报上的玩家专属二维码成功注册CryptoJOY（即注册成为新用户），同时参与摇摇乐3次，玩家即可获得1次摇一摇机会，每日玩家通过邀请获得的次数上限为12次。
+                                            <br>
+                                            <br>
+                                            二、至页面的左上角选择“塞金币”，将自己的心意通过金币的方式打包成红包传达出去，玩家每成功发送10CJT生成红包1次，即可获得1次摇一摇的机会，此机会仅限当前轮有效。
+                                           </p>
+                                           
+                                           <h3>
+                                               特别声明
+                                           </h3>
+                                           <p>
+                                               本游戏凭着公平公开的规则在进行，若玩家通过其他渠道违反游戏的公平性，比如但不限于通过特殊手段盗取奖金、恶意注册刷奖励等；平台一经发现将冻结玩家游戏账户，同时获得的奖励也将清零处理。该游戏/活动的最终解释权归CryptoJOY所有。
+                                           </p>
+                                           
+                                           
+                                           
+                                    
+                                        </div>
+                                    </template>
+                                    <template>
+                                            <div class="index-wrap">
+                                                <div class="index-bk-layer flex v">
+                                                    <div class="i-wdd">
+                                                        <img src="../assets/images/wdd2.png" alt="">
+                                                    </div>
+                                                    <div class="i-wdd-base flex1">
+                                                        <img class="ltt" src="../assets/images/ltt.png" alt="">
+                                                        <img class="rtt" src="../assets/images/rtt.png" alt="">
+                                                    </div>
+                                                    <img class="fd" src="../assets/images/fd.png" alt="">
+                                                    <img class="gf" src="../assets/images/gf.png" alt="">
+                                                    <img class="btt" src="../assets/images/btt.png" alt="">
+                                                    
+                                                </div>
+                                                <div class="index flex v sb">
+                                                    <div class="malldeng2" @click="dialogshow3=true">
+                                                         <img  src="../assets/images/ddlongd.png" alt="">
+                                                          <router-link to="" >
+                                                            <div class="lj-text">礼金商城</div>
+                                                            <span class="lj-text-info">VIP专属福利</span>
+                                                         </router-link>
+                                                    </div>
+                                                    <div class="malldeng center">
+                                                         <img  src="../assets/images/ddlong.png" alt="">
+                                                         <i>{{latestrecord.person_num}}</i>
+                                                         <div class="lj-text">大奖号</div>
+                                                    </div>
+                                                    <div class="balance flex vc"  @click="$router.push('dash/yd')">
+                                                        <i class="coin-icon"></i>
+                                                        <i>{{userinfo.received | currency }} HB</i>  
+                                                    </div>
+                                                   
+                                                    <div class="icon-btns">
+                                                        <div class="icon-btn center" @click.stop="dialogshow2=true">
+                                                            <span :class="`icon-pic v-l-icon vip0`" :style="`backgroundImage:url(${vip.icon})`"></span>
+                                                            <i class="icon-pic-text">VIP{{vip.sort-1}}</i>
+                                                            <i class="vip-hint" >!升级vip{{vip.sort}}</i>
+                                                        </div>
+                                                        <a class="icon-btn center" :href="jump" :target="jump ? '_blank' : ''">
+                                                            <span class="icon-pic share"></span>
+                                                            <i class="icon-pic-text">分享</i>
+                                                        </a>
+                                                        <div class="icon-btn center" @click="$router.push('wish')">
+                                                            <span class="icon-pic coin"></span>
+                                                            <i class="icon-pic-text">塞金币</i>
+                                                        </div>
+                                                        <div  class="icon-btn center" @click="$router.push('gl')">
+                                                            <span class="icon-pic rule"></span>
+                                                            <i class="icon-pic-text" >攻略</i>
+                                                        </div>
+                                                        <div  class="icon-btn center" @click="handleMusic">
+                                                            <span class="icon-pic music" :class="{active}" style="minWidth: 30px;minHeight: 30px;width: 30px;height: 30px"></span>
+                                                            <i class="icon-pic-text" >音乐</i>
+                                                        </div>
+                                                    </div>
+                                        
+                                        
+                                                    <div class="i-tp center">
+                                                        <div class="i-amount din htextshadow">{{userinfo.received | currency }} HB</div>
+                                                        <div class="kj-info htextshadow">{{latestrecord.id}}</div>
+                                                        <div class="kj-info htextshadow">开奖时间剩余：{{cd.hour | makeUp}}h:{{cd.minutes | makeUp}}:{{cd.seconds | makeUp}}</div>
+                                                        <div class="tree " >
+                                                            <img src="../assets/images/tree.png" v-show="!isShake" ref="spic">
+                                                            <div class="shakegif" v-show="isShake" ref="gif">
+                                                                <!-- <img src="../assets/images/gif.gif"  id="gif"> -->
+                                                            </div>
+                                                        </div>
+                                                        <div class="jrky" >今日可摇 ：{{userinfo.rock_cnt}}次</div>
+                                                        <div class="share-show" :class="{deactive}" 
+                                                        @click="shakeHandle"
+                                                        >
+                                                            <i class="share-icon"></i>
+                                                            <span v-if="!deactive">
+                                                                摇一摇
+                                                                <i>领</i>
+                                                                金币
+                                                            </span>
+                                                            <span v-else>
+                                                                明天继续努力哦
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="i-bt" >
+                                                        <img ref="tag" src="../assets/images/p1-4.png" alt="">
+                                                        <div ref="barra" id="barra" v-show="showDanmu">
+                                                            <canvas id="canvas"></canvas>
+                                                        </div>
+                                                    </div>
+                                        
+                                                    
+                                                    <Useup :show.sync = 'dialogshow' ></Useup>
+                                                    <Ercode :show.sync = 'dialogshow2' ></Ercode>
+                                                    <Tosee :show.sync = 'dialogshow3'></Tosee>
+                                                </div>
+                                            </div>
+                                        </template>
+                                        <template>
+                                                <div class="reward-wrap">
+                                                    <div class="reward flex v center">
+                                                        <div class="close" @click="back"></div>
+                                                        <div class="r-tp flex1 flex vc">
+                                                            <div class="r-tp-wrap">
+                                                                <div class="h-joy">JOY摇摇乐</div>
+                                                                <div class="h-joy-info htextshadow">
+                                                                    <div>{{id}}</div>
+                                                                    <template v-if="type">
+                                                                        开奖时间剩余：{{cd.hour | makeUp}}h:{{cd.minutes | makeUp}}:{{cd.seconds | makeUp}} 
+                                                                    </template>
+                                                                    <template v-else>
+                                                                        已开奖
+                                                                    </template>
+                                                                </div>
+                                                                <div class="xiala">
+                                                                    <img src="../assets/images/xiala.png" alt="">
+                                                                    <img src="../assets/images/bird.png" class="bird" alt="">
+                                                                    <div class="denglong">
+                                                                        <img src="../assets/images/denglong.png"  alt="">
+                                                                        <div class="denglong-info center" v-if="!type">
+                                                                            <i>大奖</i>
+                                                                            <div>{{djh}}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <div class="r-bt-cont flex v">
+                                                                    <div class="congr flex1 flex hc vc">
+                                                                        <!-- <div class="congr-tt" v-if="cong.sorry">
+                                                                            很遗憾 <br> 请继续努力哟
+                                                                        </div> -->
+                                                                        <div class="congr-tt" v-if="type">
+                                                                            一大波金币正在来的路上 <br>  请耐心等待
+                                                                        </div>
+                                                                        <div  v-if="!type">
+                                                                            <div class="congr-tt"><span>恭喜您摇到</span> <i>{{num}}</i> </div>
+                                                                            <div class="congr-num din">{{value | currency}} HB</div>
+                                                                            <p class="congr-hint">金币将自动存入您的账户内</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <footer class="congr-fter">
+                                                                        <p>CryptoJOY 社区祝您</p>
+                                                                        <p>阖家团圆，新春快乐</p>
+                                                                    </footer>
+                                                                </div>
+                                                                </div>
+                                                                <div class="fire-wrap">
+                                                                    <img class="fire" src="../assets/images/fire.png" alt="">
+                                                                    您今日还剩 {{userinfo.rock_cnt}}次摇一摇机会，
+                                                                    <br>
+                                                                    通过以下方式可以快速获得额外的机会
+                                                                </div>
+                                                                <div class="r-btns flex sb">
+                                                                    <div class="r-btn">
+                                                                       <a :href="jump" :target="jump ? '_blank' : ''"> 塞金币上吉祥树</a>
+                                                                    </div>
+                                                                    <div class="r-btn">
+                                                                        <router-link to="/wish">分享红包喜悦</router-link>
+                                                                        <img class="littletree" src="../assets/images/firetree.png" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="r-bt center">
+                                                            <img src="../assets/images/r1-4.png" alt="">
+                                                            <img class="fire" src="../assets/images/fire.png" alt="">
+                                                            <router-link :to="{name: 'award', params:{id}}" v-if="!type" ><span>查看获奖记录</span></router-link>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </template>
+                                            摇一摇赢取CJT  
+                                            
+                                            
+
+                                            <template>
+                                                    <div class='wish-wrap'>
+                                                        <div class="close" @click="back"></div>
+                                                        <div class="wish">
+                                                            <div class="w-tt">
+                                                                <img src="../assets/images/w1.png" alt="">
+                                                            </div>
+                                                            <div class="w-mar">
+                                                                <div class="w-form">
+                                                                    <div class="w-fs htextshadow2">
+                                                                        发送金币数量
+                                                                    </div>
+                                                                    <input class="w-input din2" type="text" v-model.trim="num">
+                                                                    <div class="w-hint">
+                                                                        <div class="w-hint-gd htextshadow2" >每发送100CJT可获得1次摇一摇机会</div>
+                                                                        <span>可用余额：{{balance.balance |currency }} CJT</span>
+                                                                        <div>
+                                                                            <a :href="jump" target="_blank">CJT不足？点此去充值</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="w-fs htextshadow2">您的祝福语</div>
+                                                                    <ul class="flex w-yu" @click="chooseText">
+                                                                        <li class="l active">
+                                                                            阖家团圆，新春快乐
+                                                                        </li>
+                                                                        <li class="r">
+                                                                            牛气冲天，诸事顺利
+                                                                        </li>
+                                                                        <li class="l">
+                                                                            平安喜乐，心想事成
+                                                                        </li>
+                                                                        <li class="r">
+                                                                            身体健康，万事如意
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="w-juhua">
+                                                                    <img src="../assets/images/xh2.png" alt="">
+                                                                </div>
+                                                                <div class="w-tbn center">
+                                                                    <el-button class="r-btn" @click="confirm" :loading="loader">
+                                                                        塞金币上吉祥树
+                                                                    </el-button>
+                                                                    <!-- <div class="r-btn" @click="confirm">塞金币上吉祥树</div> -->
+                                                                    <div><router-link to="/dash/fc">查看发送记录</router-link></div>
+                                                                </div>
+                                                                <img class="w3" src="../assets/images/w3.png" alt="">
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        <div class="wish-layer flex" v-if="wishshow" :style="{zIndex:z}">
+                                                            <div class="wish-pay">
+                                                                <div class="w-p-tt flex sb">
+                                                                    <span class="h-hcolor">支付确认</span>
+                                                                    <span class="w-cancel" @click="cancel">取消</span>
+                                                                </div>
+                                                                <div class="w-p-bd">
+                                                                    <div class="w-p-row h-hcolor">
+                                                                        <div class="w-p-hint">请输入密码</div>
+                                                                        <input class="wps" type="text">
+                                                                    </div>
+                                                                     <div class="w-p-row h-hcolor">
+                                                                        <span class="w-p-hint">验证码</span>
+                                                                        <div class="w-yzm flex">
+                                                                            <input class="w-yzm-input flex1" type="text">
+                                                                            <span>获取验证码</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="w-p-btn center">
+                                                                        确认
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                                请输入金币的数量              
+                                                金币的数量最小值为1           
+                                                
+                                                
+
+                                                登录态过期，请重新登录
+
+                                                const config = {
+                                                    '0': ["ERROR_SUCCEED", "执行成功", ''],
+                                                    '-1': ["INTERNAL_ERROR", "内部错误", 'error occur in the server'],
+                                                    '-2': ["SKU_STOCKS_INSUFFICENT", "库存不足", 'insufficient inventory'],
+                                                    '-3': ["RESOURCE_NOT_FOUND", "查询数据不存在", 'query data does not exist'],
+                                                    '-4': ["DATA_DESTRACTION", "内部错误(暂时)", 'server encounters error temporarily'],
+                                                    '-5': ["PARAMETER_ERROR", "参数错误", 'parameter error'],
+                                                    '-6': ["INSUFFICENT_BALANCE", "余额不足", 'Sorry, your are in state of insufficient balance'],
+                                                    '-7': ["ORDER_HAS_FINISHED", "订单已完成", 'order has been finished already'],
+                                                    '-8': ["USERNAME_OR_PASSWORD_ERROR", "账号或密码错误", 'account or password error'],
+                                                    '-9': ["INVALID_VERIFY_CODE", "验证码不合法或过期", 'the authentication code is illegal or expired.'],
+                                                    '-10': ["INVALID_TOKEN_OR_EXPIRED{any:'token过期或非法', 502:'token不存在' ,401:'token不合法'}", '登录态过期', 'login status expired'],
+                                                    '-11': ["RECORD_EXISTS", "数据已存在", 'the data already exists'],
+                                                    '-12': ["SIGN_ERROR", "签名错误", 'signature error'],
+                                                    '-13': ["PHONE_EXISTS", "电话号码已注册", 'the telephone number has been registered.'],
+                                                    '-14': ["NAME_EXISTS", "用户名已注册", 'the username has been registered'],
+                                                    '-15': ["ABOVE_MAXIMUM", "超出最大值", 'exceeding maximum'],
+                                                
+                                                    '-16': ["REQUEST_ID_ERROR", "requestid错误", 'requestid is wrong'],
+                                                    '-17': ["GEETEST_NO_PASS", "极验验证不通过", 'Validation not passed'],
+                                                    '-18': ["LESS_DEPOSIT", "低于最小额度", 'not allow to below the minimum limit'],
+                                                    '-19': ["NOT_MATCH", "不匹配(用户ID等)", 'Mismatch user id'],
+                                                    '-20': ["APPLY_CODE_FAIL", "申请验证码失败，请10分钟再获取", 'failure to apply verification code and get once angain in 10 minutes'],
+                                                
+                                                    '-21': ["INVITE_CODE_NOT_MATCH", "邀请码错误", 'invitation code error'],
+                                                    '-22': ["ILLEGAL_OPERATION", "非法操作", 'illegal operation'],
+                                                    '-23': ["APPLY_SUCCESS", "(提现)申请成功", 'The application is successfull'],
+                                                    '-24': ["REJECT_OPERATION", "还有未通过审核(提现)申请", 'Prohibition operation'],
+                                                
+                                                
+                                                    dft: ['', '发生错误', 'error accurs']
+                                                };
+                                                
+</body>
+</html>
