@@ -1,0 +1,397 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>拉普拉斯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,
+      minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/animate.css">
+  <link rel="stylesheet" href="./css/swiper.min.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="./css/index.css" />
+  <script src="./js/jquery.js"></script>
+  <script src="./js/i18n.js"></script>
+  <script src="./js/index.js"></script>
+</head>
+
+<body>
+  <header class="header-box">
+    <div class="container">
+      <div class="row header clearfix">
+        <div class="logo-box">
+          <img class="logo" src="./img/ndlogo.png">
+        </div>
+        <ul class="nav fr">
+          <li data-block="base" data-local="lpls">拉普拉斯</li>
+          <li data-block="alloc" data-local="alloc">分配方案</li>
+          <li data-block="route" data-local="route">路线图</li>
+          <li data-block="lptgroup" data-local="lptgroup">团队</li>
+          <!-- <li data-block="news" data-local="news">最新资讯</li> -->
+          <li data-block="qa" data-local="qa">FAQ</li>
+          <li data-block="cn" class='switchLang'>中文</li>
+
+        </ul>
+        <div class="hamburger fr" id="hamburger-1">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+        <div class="mnav-layer">
+          <ul class="nav fr">
+            <li data-block="base" data-local="lpls">拉普拉斯</li>
+            <li data-block="alloc" data-local="alloc">分配方案</li>
+            <li data-block="route" data-local="route">路线图</li>
+            <li data-block="lpt" data-local="lpt">团队</li>
+            <!-- <li data-block="news" data-local="news">最新资讯</li> -->
+            <li data-block="qa" data-local="qa">FAQ</li>
+            <li data-block="cn" class='switchLang'>中文</li>
+          </ul>
+          <div class="nav-share">
+            <ul class="icons">
+              <li>
+                <a href="https://t.me/laplacenetwork" target="_blank">
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/LaplaceNetwork" target="_blank">
+                </a>
+              </li>
+              <li>
+                <a href="http://weibo.com/LaplaceNetwork" target="_blank">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </header>
+  <section data-block="main" class="main block">
+    <div class="container">
+      <div class="main-title clearfix " style="margin-bottom: 30px">
+        <img src="./img/logo.png" />
+        <div class="main-title-wrap fr">
+          <p class="title-text" data-local="lplshy">拉普拉斯网络</p>
+          <span class="title-info" data-local="dcenter">去中心化数据交换协议群</span>
+        </div>
+      </div>
+      <div class="main-btn">
+        <a href="./laplace_whitepaper_cn_v5.5.pdf" id="download" data-local="whitebook">白皮书</a>
+        <img src='./img/bb.png' />
+      </div>
+      <div class="main-desc" data-local="datasee">
+        支持数据的发现、授权与交易
+      </div>
+    </div>
+  </section>
+  <section data-block="intro" class="intro block">
+    <div class="container">
+      <div class="intro-main">
+        <div class="intro-title">
+          <h2 data-local="intro_video_title"></h2>
+          <h3 data-local="intro_video_content"></h3>
+        </div>
+        <div class="intro-video">
+          <video id="intro_video_url" controls="controls" width="60%">
+            您的浏览器不支持 video 标签。
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section data-block="base" class="base block">
+    <div class="container" id="basecontainer">
+      <div class="row swiper-wrapper">
+        <div class="b-col swiper-slide">
+          <h2 class="b-tit tit" data-local="base">基 础 架 构</h2>
+          <div class="b-cont">
+            <h3 class="b-tit2" data-local="tranlink">
+              跨链抽象层
+            </h3>
+            <p class="b-info" data-local="mainplatform">
+              主链平台中立
+            </p>
+            <p class="b-info" data-local="unionplatform">
+              规避绑定单一平台风险
+            </p>
+            <h3 class="b-tit2" data-local="coredata">核心数据交换协议群</h3>
+            <h3 class="b-tit2" data-local="ecohandle">生态伙伴治理方案</h3>
+            <p class="b-info" data-local="e-com">基于代币经济学驱动
+
+            </p>
+            <p class="b-info" data-local="xytx">
+              基于代币的信用评分体系
+            </p>
+            <p class="b-info" data-local="dxytx">
+
+              去中心化信任治理体系
+            </p>
+
+
+          </div>
+        </div>
+        <div class="b-col swiper-slide">
+          <h2 class="b-tit tit" data-local="agree">协 议 群</h2>
+          <div class="b-cont">
+            <h3 class="b-tit2" data-local="dagree">
+              去中心化CA协议
+            </h3>
+            <h3 class="b-tit2" data-local="datastore">
+              数据储存协议
+            </h3>
+            <h3 class="b-tit2" data-local="datasanction">
+              数据交易协议
+            </h3>
+            <h3 class="b-tit2" data-local="pay">
+              支付协议
+            </h3>
+            <h3 class="b-tit2" data-local="xypg">信用评估协议</h3>
+            <h3 class="b-tit2" data-local="ecoagree">生态工作量证明协议</h3>
+            <p class="b-info" data-local="ecowa">生态贡献挖矿
+
+            </p>
+
+          </div>
+        </div>
+        <div class="b-col swiper-slide">
+          <h2 class="b-tit tit" data-local="ecozj">生 态 组 件</h2>
+          <div class="b-cont">
+            <h3 class="b-tit2" data-local="app">
+              移动APP
+            </h3>
+            <p class="b-info" data-local="ecoen">
+              生态服务的官方入口
+
+            </p>
+            <h3 class="b-tit2" data-local="indexserive">索 引 服 务</h3>
+            <p class="b-info" data-local="lpt">支持对Laplace网络中各种数据产品的搜索、认证以及推荐
+            </p>
+            <h3 class="b-tit2" data-local="lptdev">
+              Laplace开发框架
+            </h3>
+            <p class="b-info" data-local="quickin">
+              方便生态伙伴快速接入协议
+
+            </p>
+          </div>
+        </div>
+        <div class="b-col swiper-slide">
+          <h2 class="b-tit tit" data-local="appuse">应 用 场 景</h2>
+          <div class="b-cont">
+            <h3 class="b-tit2">
+              La-place Pro
+            </h3>
+            <p class="b-info" data-local="b2b">
+              B2B数据交易所
+            </p>
+            <h3 class="b-tit2">La-shop</h3>
+            <p class="b-info" data-local="b2c">B2C数字版权市场
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+  <section data-block="alloc" class="alloc block">
+    <div class="container">
+      <!-- <h2 class="lpt-hint">Laplace不支持中国大陆地区以及美国地区用户参与</h2> -->
+      <h2 class="tit" data-local="allocfa">分 配 方 案</h2>
+      <p class="a-total marb20" data-local="fxzl">发行总量：10亿</p>
+      <div class="circles">
+        <div class="cir-row">
+          <canvas id="canvas1" width="200" height="200"></canvas>
+          <canvas id="canvas2" width="200" height="200"></canvas>
+          <canvas id="canvas3" width="200" height="200"></canvas>
+          <canvas id="canvas4" width="200" height="200"></canvas>
+          <canvas id="canvas5" width="200" height="200"></canvas>
+          <canvas id="canvas6" width="200" height="200"></canvas>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <section data-block="route" class="route block">
+    <div class="container">
+      <div class="r-hd">
+        <h2 class="tit" data-local="routemap">
+          路 线 图
+        </h2>
+
+      </div>
+      <div class="imgc">
+        <img src="./img/blogo.png" alt="">
+      </div>
+      <div class="timeline clearfix">
+
+        <div class="t-node">
+          <div class="t-node-cont put-left">
+            <h3>2019 Q2</h3>
+            <p data-local="cbxy">初版协议定稿</p>
+          </div>
+        </div>
+        <div class="t-node">
+          <div class="t-node-cont put-right">
+            <h3>2019 Q3</h3>
+            <p data-local="appline">官方APP上线，后期同步迭代协议最新进展</p>
+            <p data-local="xypgjs">信用评估社区建设</p>
+          </div>
+        </div>
+        <div class="t-node">
+          <div class="t-node-cont put-left">
+            <h3>2019 Q4</h3>
+            <p data-local="q2q">测试版协议上线，发布社区评估版开发框架</p>
+            <p data-local="q2q1">Laplace-PAY正式上线APP，招募支付网络生态伙伴</p>
+          </div>
+        </div>
+        <div class="t-node">
+          <div class="t-node-cont put-right">
+            <h3>2020 Q1</h3>
+            <p data-local="q31">上线官方索引服务</p>
+          </div>
+        </div>
+        <div class="t-node">
+          <div class="t-node-cont put-left">
+            <h3>2020 Q2</h3>
+            <p data-local="q41">正式网评估版本完整上线</p>
+            <p data-local="q42">开放生态贡献挖矿</p>
+            <p data-local="q43">招募全网络生态伙伴</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section data-block="lptgroup" class="lptgroup block">
+    <div class="container">
+      <h2 class="tit" data-local="lptgroup">
+        团 队
+      </h2>
+      <div class="lpt-info">
+
+      </div>
+    </div>
+  </section>
+  <!-- <section data-block="news" class="news block" >
+    <div class="container">
+      <h2 class="tit" data-local="ln">最新资讯</h2>
+      <div class="news-wrap flex">
+        <div class="flex1 new-block">
+          <img src="./img/n1.png" alt="">
+          <p>
+            <a href="" target="_blank">Welcome TO LCP WORLD</a>
+          </p>
+        </div>
+        <div class="flex1 new-block">
+          <img src="./img/n2.png" alt="">
+          <p>
+            <a href="" target="_blank">The era of data trading platforms is coming
+            </a>
+          </p>
+        </div>
+        <div class="flex1 new-block">
+          <img src="./img/n3.png" alt="">
+          <p>
+            <a href="" target="_blank">What exactly is LCPT？</a>
+          </p>
+        </div>
+      </div>
+      <a href="" target="_blank" class="seeall-btn" data-local="seeall">查看全部</a>
+    </div>
+  </section> -->
+  <section data-block="app_intro" class="app_intro block">
+    <div class="container">
+      <ul id="video_list" class="video-list">
+      </ul>
+    </div>
+    </div>
+  </section>
+
+  <section data-block="qa" class="qa block">
+    <div class="container">
+      <h2 class="tit">F A Q</h2>
+      <div class="qa-cont">
+      </div>
+    </div>
+
+
+
+  </section>
+  <footer>
+    <div class="container">
+      <h1 data-local="cxgz" style="margin-bottom: 30px">持续关注我们的进度</h1>
+      <div class="ercode-box marb20">
+        <img src="./img/ercode.png" alt="">
+      </div>
+      <!-- <p class="mar20" data-local="dywm">订阅我们的免费资</p>
+      <div class="x-input clearfix">
+        <input type="text" placeholder="Email">
+        <span class="fr" data-local="gz">关注</span>
+      </div> -->
+      <ul class="icons">
+        <li>
+          <a id="telegram_link" href="https://t.me/LaplaceNetwork_CN" target="_blank">
+
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/LaplaceNetwork" target="_blank">
+
+          </a>
+        </li>
+        <li>
+          <a href="http://weibo.com/LaplaceNetwork" target="_blank">
+
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/net.laplace.3" target="_blank">
+
+          </a>
+        </li>
+        <li>
+          <a href=" https://www.youtube.com/channel/UCdVPt2Glcj5i-JRkBxLKK8Q" target="_blank">
+
+          </a>
+        </li>
+        <li>
+          <a href=" https://medium.com/@LaplaceNetwork" target="_blank">
+
+          </a>
+        </li>
+        <li>
+          <a href=" https://github.com/LaplaceNetwork/website" target="_blank">
+
+          </a>
+        </li>
+        <li>
+          <a href=" https://www.reddit.com/user/laplacenetwork" target="_blank">
+
+          </a>
+        </li>
+        <li>
+          <a href="https://steemit.com/@laplacenetwork" target="_blank">
+
+          </a>
+        </li>
+        <li>
+          <a href="mailto:laplacenetwork@sina.com" target="_blank">
+
+          </a>
+        </li>
+      </ul>
+      <p class="link">
+        <span>support@laplace.network</span>
+        <span> | </span>
+        <span>Copyright 2018 &copy; Laplace | Privacy policy</span>
+      </p>
+    </div>
+  </footer>
+  <script src="./js/circle-progress.js"></script>
+  <script src="./js/swiper.min.js"></script>
+
+</body>
+
+</html>
