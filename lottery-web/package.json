@@ -37,7 +37,7 @@
     "file-loader": "",
     "html-webpack-plugin": "",
     "moment": "^2.22.2",
-    "node-sass": "^4.9.3",
+    "node-sass": "^4.13.1",
     "postcss-loader": "^3.0.0",
     "promise.prototype.finally": "^3.1.0",
     "qrcode": "^1.2.2",
