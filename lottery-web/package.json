@@ -36,7 +36,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "",
     "html-webpack-plugin": "",
-    "moment": "^2.22.2",
+    "moment": "^2.29.4",
     "node-sass": "^4.9.3",
     "postcss-loader": "^3.0.0",
     "promise.prototype.finally": "^3.1.0",
