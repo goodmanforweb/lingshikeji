@@ -36,7 +36,7 @@
     "element-ui": "^2.4.7",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "",
-    "font-spider": "^1.3.4",
+    "font-spider": "^1.3.5",
     "html-webpack-plugin": "",
     "moment": "^2.22.2",
     "node-sass": "^4.9.3",
